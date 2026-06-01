@@ -82,6 +82,10 @@ const searchElements = [
 	{
 		label: "Les prix",
 		link: "pricing.html"
+	},
+	{
+		label: "Les minis",
+		link: "mini.html"
 	}
 ];
 
