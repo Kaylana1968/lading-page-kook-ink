@@ -42,6 +42,10 @@ section p {
 	margin-top: 0.5rem;
 }
 
+section p + p {
+	margin-top: 1rem;
+}
+
 section a {
 	color: oklch(47% 0.157 37.304); /* orange-800 */
 	transition-property: color;
@@ -63,6 +67,22 @@ section a:focus {
 	color: oklch(40.8% 0.123 38.172); /* orange-900 */
 }
 
+section .image-container {
+	display: flex;
+	justify-content: center;
+	gap: 2rem;
+	margin: 1rem 0;
+}
+
+section .image-container img {
+	object-fit: contain;
+	max-height: 30rem;
+	width: auto;
+	border-radius: 1rem;
+	border: 1px solid oklch(96.7% 0.003 264.542);
+	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* shadow-lg */
+}
+
 *:not(:defined) {
 	visibility: hidden;
 }
@@ -70,5 +90,13 @@ section a:focus {
 @media screen and (max-width: 640px) {
 	section {
 		margin: 1rem 0.5rem 1rem 0.5rem;
+	}
+
+	section .image-container {
+		flex-direction: column;
+	}
+
+	section .image-container img {
+		max-height: 80vh;
 	}
 }
