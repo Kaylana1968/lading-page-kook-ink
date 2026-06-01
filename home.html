@@ -5,9 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<link rel="preload" href="style.css" as="style" />
+		<link rel="preload" href="dist/output.css" as="style" />
 		<link rel="preload" href="script.js" as="script" crossorigin />
 		<link rel="preload" href="images/logo.webp" as="image" />
-		<link rel="stylesheet" href="./dist/output.css" />
+		<link rel="stylesheet" href="dist/output.css" />
 		<link rel="stylesheet" href="style.css" />
 		<script type="module" src="script.js"></script>
 
@@ -91,10 +92,11 @@
 
 					<div class="image-container">
 						<img
-							src="images/navigation-home.png"
+							src="images/navigation-home.webp"
 							alt="Barre de navigation avec bouton home entouré"
 							width="810"
 							height="90"
+							fetchpriority="high"
 						/>
 					</div>
 				</section>
@@ -115,17 +117,19 @@
 
 					<div class="image-container">
 						<img
-							src="images/recipe-detail-1.png"
+							src="images/recipe-detail-1.webp"
 							alt="Haut de la page dédiée d'une recette"
 							width="818"
 							height="1448"
+							fetchpriority="high"
 						/>
 
 						<img
-							src="images/recipe-detail-2.png"
+							src="images/recipe-detail-2.webp"
 							alt="Bas de la page dédiée d'une recette"
 							width="812"
 							height="1444"
+							fetchpriority="high"
 						/>
 					</div>
 
@@ -136,17 +140,19 @@
 
 					<div class="image-container">
 						<img
-							src="images/home-recipe-like.png"
+							src="images/home-recipe-like.webp"
 							alt="Bouton like dans la page d'accueil"
 							width="826"
 							height="1461"
+							loading="lazy"
 						/>
 
 						<img
-							src="images/recipe-detail-like.png"
+							src="images/recipe-detail-like.webp"
 							alt="Bouton like dans la page dédiée d'une recette"
 							width="818"
 							height="1448"
+							loading="lazy"
 						/>
 					</div>
 
@@ -161,10 +167,11 @@
 
 					<div class="image-container">
 						<img
-							src="images/home-profile.png"
+							src="images/home-profile.webp"
 							alt="Bouton pour accéder au profil d'un utilisateur depuis la page"
 							width="816"
 							height="1452"
+							loading="lazy"
 						/>
 					</div>
 				</section>
