@@ -4,18 +4,18 @@ class FaqCard extends HTMLElement {
 		const answer = this.getAttribute("answer");
 
 		const parentElement = document.createElement("div");
+		parentElement.dataset.inactive = "";
 		parentElement.className =
-			"rounded-lg overflow-hidden border border-gray-200 shadow-sm";
+			"group rounded-lg overflow-hidden border border-gray-200 shadow-sm";
 
 		const questionElement = document.createElement("div");
 		questionElement.className =
-			"z-20 relative flex items-center gap-2 justify-between bg-gray-100 p-2 cursor-pointer after:content-['▾']";
+			"z-20 relative flex items-center gap-2 justify-between bg-gray-100 p-2 cursor-pointer after:content-['▾'] after:transition-transform after:duration-300 not-group-data-inactive:after:rotate-180";
 		questionElement.innerText = question;
 
 		const collapseWrapper = document.createElement("div");
-		collapseWrapper.dataset.inactive = "";
 		collapseWrapper.className =
-			"group grid transition-[grid-template-rows] duration-300 data-inactive:grid-rows-[0fr] grid-rows-[1fr]";
+			"grid transition-[grid-template-rows] duration-300 group-data-inactive:grid-rows-[0fr] grid-rows-[1fr]";
 
 		const answerElement = document.createElement("div");
 		answerElement.className =
@@ -25,9 +25,9 @@ class FaqCard extends HTMLElement {
 		collapseWrapper.appendChild(answerElement);
 
 		questionElement.addEventListener("click", () => {
-			const isInactive = "inactive" in collapseWrapper.dataset;
-			if (isInactive) delete collapseWrapper.dataset.inactive;
-			else collapseWrapper.dataset.inactive = "";
+			const isInactive = "inactive" in parentElement.dataset;
+			if (isInactive) delete parentElement.dataset.inactive;
+			else parentElement.dataset.inactive = "";
 		});
 
 		const additionnalClasses = {
